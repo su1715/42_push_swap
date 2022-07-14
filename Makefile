@@ -37,8 +37,7 @@ clean :
 	make -C $(LIBFT_DIR) clean
 
 fclean : clean
-	$(RM) $(SERVER)
-	$(RM) $(CLIENT)
+	$(RM) $(NAME)
 	make -C $(LIBFT_DIR) fclean
 
 re	:

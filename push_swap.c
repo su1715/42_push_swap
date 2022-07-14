@@ -8,15 +8,36 @@ void	error_exit(void)
 
 #include <stdio.h>
 
-void	test(t_list	*a)
+void	parse_test(t_list	*a)
 {
 	t_node	*head;
 
 	head = a->top;
-	while(head != a->bottom) {
-		printf("%d ", head->num);
+	printf("(index: %d, num: %d), ", head->index, head->num);
+	head = head->next;
+	while(head != a->top) {
+		printf("(index: %d, num: %d), ", head->index, head->num);
 		head = head->next;
 	}
+}
+
+void	sort_small(t_lists *lists)
+{
+
+}
+
+void	sort_large(t_lists *lists)
+{
+	a_to_b();
+	b_to_a();
+}
+
+void	sort_list(t_lists *lists)
+{
+	if (lists->a->size < 5)
+		sort_small(lists);
+	else
+		sort_large(lists);
 }
 
 int	main(int ac, char *av[])
@@ -29,6 +50,7 @@ int	main(int ac, char *av[])
 	if (!lists)
 		exit(1);
 	lists->a = input(ac, av);
-	test(lists->a);
+	parse_test(lists->a);
+	sort_list(lists);
 	return (0);
 }

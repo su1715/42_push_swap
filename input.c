@@ -1,18 +1,26 @@
 #include "push_swap.h"
 
-static int	check_dup(t_list *a, int num)
+static int	check_duplicate(t_list *a, t_node *node)
 {
 	t_node	*head;
 
 	if (a->size == 0)
 		return (0);
 	head = a->top;
-	if (head->num == num)
-			return (1);
+	if (head->num < node->num)
+		node->index++;
+	else if (head->num > node->num)
+		head->index++;
+	else
+		return (1);
 	head = head->next;
 	while (head != a->top)
 	{
-		if (head->num == num)
+		if (head->num < node->num)
+			node->index++;
+		else if (head->num > node->num)
+			head->index++;
+		else
 			return (1);
 		head = head->next;
 	}
@@ -29,6 +37,7 @@ t_node	*make_node(int num)
 	new_node->num = num;
 	new_node->next = NULL;
 	new_node->prev = NULL;
+	new_node->index = 0;
 	return (new_node);
 }
 
@@ -60,9 +69,9 @@ static void	check_input(const char *s, t_list *a)
 		error_exit();
 	if (num > 2147483647 || num < -2147483648)
 		error_exit();
-	if (check_dup(a, (int)num))
-		error_exit();
 	new_node = make_node((int)num);
+	if (check_duplicate(a, new_node))
+		error_exit();
 	push(a, new_node);
 }
 
@@ -72,10 +81,15 @@ static void	split_input_str(const char *s, t_list *a)
 	int		i;
 
 	i = 0;
+	while (s[i] == ' ')
+		i++;
+	if (s[i] == '\0')
+		error_exit();
 	sp = ft_split(s, ' ');
 	if (!sp)
 		exit(1);
-	while (sp[i])
+	i = 0;
+	while (sp[i] != NULL)
 	{
 		check_input(sp[i], a);
 		free(sp[i]);
