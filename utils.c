@@ -50,3 +50,23 @@ int	ft_isnum(const char *s)
 	}
 	return (1);
 }
+
+int	ft_numlen(long long n)
+{
+	int	len;
+
+	if (n == 0)
+		return (1);
+	len = 0;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+int	get_top(t_list *list)
+{
+	return (list->top->index);
+}

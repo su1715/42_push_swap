@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static int	check_duplicate(t_list *a, t_node *node)
+static int	check_dup_and_indexing(t_list *a, t_node *node)
 {
 	t_node	*head;
 
@@ -22,35 +22,6 @@ static int	check_duplicate(t_list *a, t_node *node)
 	return (0);
 }
 
-t_node	*make_node(int num)
-{
-	t_node	*new_node;
-
-	new_node = (t_node *)malloc(sizeof(t_node));
-	if (!new_node)
-		exit(1);
-	new_node->num = num;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	new_node->index = 0;
-	return (new_node);
-}
-
-int	ft_numlen(long long n)
-{
-	int	len;
-
-	if (n == 0)
-		return (1);
-	len = 0;
-	while (n != 0)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
-
 static void	check_input(const char *s, t_list *a)
 {
 	long long	num;
@@ -65,7 +36,7 @@ static void	check_input(const char *s, t_list *a)
 	if (num > 2147483647 || num < -2147483648)
 		error_exit();
 	new_node = make_node((int)num);
-	if (check_duplicate(a, new_node))
+	if (check_dup_and_indexing(a, new_node))
 		error_exit();
 	push(a, new_node);
 	rotate(a);

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	is_r(t_list *list, int standard)
+int	is_rotate(t_list *list, int standard)
 {
 	t_node	*tmp;
 	int		h_location;
@@ -17,7 +17,7 @@ int	is_r(t_list *list, int standard)
 	else
 		return (0);
 }
-#include <stdio.h>
+
 void	a_to_b(t_lists *lists, int chunk)
 {
 	int	i;
@@ -38,7 +38,7 @@ void	a_to_b(t_lists *lists, int chunk)
 		}
 		else
 		{
-			if (is_r(lists->a, i + chunk))
+			if (is_rotate(lists->a, i + chunk))
 				ra(lists);
 			else
 				rra(lists);
@@ -84,12 +84,4 @@ void	sort_large(t_lists *lists)
 	chunk = 0.000000053 * x * x + 0.03 * x + 14.5;
 	a_to_b(lists, chunk);
 	b_to_a(lists);
-}
-
-void	sort_list(t_lists *lists)
-{
-	if (lists->a->size <= 5)
-		sort_small(lists);
-	else
-		sort_large(lists);
 }

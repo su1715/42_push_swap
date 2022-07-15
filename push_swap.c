@@ -1,33 +1,11 @@
 #include "push_swap.h"
 
-#include <stdio.h>
-void	parse_test(t_list	*a)
+void	sort_list(t_lists *lists)
 {
-	t_node	*head;
-
-	if (a->size == 0)
-		return;
-	head = a->top;
-	printf("(index: %d, num: %d), ", head->index, head->num);
-	head = head->next;
-	while(head != a->top) {
-		printf("(index: %d, num: %d), ", head->index, head->num);
-		head = head->next;
-	}
-	printf("\n");
-}
-
-t_list	*init_list()
-{
-	t_list	*list;
-
-	list = (t_list *)malloc(sizeof(t_list));
-	if (!list)
-		exit(1);
-	list->top = NULL;
-	list->bottom = NULL;
-	list->size = 0;
-	return (list);
+	if (lists->a->size <= 5)
+		sort_small(lists);
+	else
+		sort_large(lists);
 }
 
 int	main(int ac, char *av[])

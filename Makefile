@@ -5,15 +5,15 @@ RM = rm -rf
 NAME = push_swap
 
 SRCS = push_swap.c \
-		pop_push.c \
+		init.c \
 		input.c \
+		swap.c \
+		pop_push.c \
 		rotate.c \
 		rotate_reverse.c \
-		swap.c \
 		sort.c \
 		sort_small.c \
 		utils.c \
-		utils2.c \
 		finish.c
 INCS = push_swap.h
 

@@ -46,7 +46,7 @@ void	sort_four_five_nodes(t_lists *lists, int first, int second, int third)
 	a_min_index = 0;
 	while (a->size > 3)
 	{
-		if(is_r(a, a->size / 2))
+		if(is_rotate(a, a->size / 2))
 			while (a->top->index != a_min_index)
 				ra(lists);
 		else
