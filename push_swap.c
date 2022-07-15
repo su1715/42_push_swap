@@ -21,6 +21,7 @@ void	parse_test(t_list	*a)
 		printf("(index: %d, num: %d), ", head->index, head->num);
 		head = head->next;
 	}
+	printf("\n");
 }
 
 t_list	*init_list()
@@ -48,7 +49,7 @@ int	main(int ac, char *av[])
 	lists->a = input(ac, av);
 	lists->b = init_list();
 	sort_list(lists);
-	parse_test(lists->a);
+
 	//free list, lists
 	return (0);
 }

@@ -68,6 +68,7 @@ static void	check_input(const char *s, t_list *a)
 	if (check_duplicate(a, new_node))
 		error_exit();
 	push(a, new_node);
+	rotate(a);
 }
 
 static void	split_input_str(const char *s, t_list *a)

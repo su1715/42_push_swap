@@ -26,6 +26,7 @@ long long	ft_atoll(const char *str);
 int	ft_isnum(const char *s);
 void	error_exit(void);
 void	push(t_list *list, t_node *node);
+void	rotate(t_list *list);
 void	sort_list(t_lists *lists);
 int	get_top(t_list *list);
 t_list	*init_list();

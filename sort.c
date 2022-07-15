@@ -91,7 +91,6 @@ void	b_to_a(t_lists *lists)
 	}
 }
 
-#include <stdio.h>
 void	sort_large(t_lists *lists)
 {
 	int x;
@@ -99,9 +98,8 @@ void	sort_large(t_lists *lists)
 
 	x = lists->a->size;
 	chunk = 0.000000053 * x * x + 0.03 * x + 14.5;
-	printf("chunk: %d\n", chunk);
 	a_to_b(lists, chunk);
-	//b_to_a(lists);
+	b_to_a(lists);
 }
 
 void	sort_list(t_lists *lists)

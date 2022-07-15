@@ -32,6 +32,7 @@ t_node	*pop(t_list *list)
 	{
 		list->top = NULL;
 		list->bottom = NULL;
+		list->size -= 1;
 		return (tmp);
 	}
 	list->top = list->top->next;
