@@ -77,8 +77,8 @@ static void	b_to_a(t_lists *lists)
 
 void	sort_large(t_lists *lists)
 {
-	int x;
-	int chunk;
+	int	x;
+	int	chunk;
 
 	x = lists->a->size;
 	chunk = 0.000000053 * x * x + 0.03 * x + 14.5;

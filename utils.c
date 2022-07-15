@@ -13,7 +13,7 @@ static int	is_space(char c)
 long long	ft_atoll(const char *str)
 {
 	long long	tot;
-	int				sign;
+	int			sign;
 
 	tot = 0;
 	sign = 1 - ((*str == '-') << 1);

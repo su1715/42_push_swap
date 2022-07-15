@@ -17,7 +17,7 @@ static int	check_dup_and_indexing(t_list *a, t_node *node)
 			return (1);
 		head = head->next;
 		if (head == a->top)
-			break;
+			break ;
 	}
 	return (0);
 }

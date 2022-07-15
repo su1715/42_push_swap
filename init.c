@@ -14,7 +14,7 @@ t_node	*make_node(int num)
 	return (new_node);
 }
 
-t_list	*init_list()
+t_list	*init_list(void)
 {
 	t_list	*list;
 

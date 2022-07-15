@@ -1,11 +1,12 @@
 #include "push_swap.h"
 
-static void	swap(t_list *list) {
+static void	swap(t_list *list)
+{
 	int	tmp_num;
-	int tmp_index;
+	int	tmp_index;
 
 	if (list->size < 2)
-		return;
+		return ;
 	tmp_num = list->top->num;
 	list->top->num = list->top->next->num;
 	list->top->next->num = tmp_num;

@@ -22,7 +22,7 @@ typedef struct s_lists {
 }	t_lists;
 
 t_node		*make_node(int num);
-t_list		*init_list();
+t_list		*init_list(void);
 t_list		*input(int ac, char *av[]);
 void		sort_small(t_lists *lists);
 void		sort_large(t_lists *lists);

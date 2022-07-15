@@ -14,13 +14,13 @@ void	free_t_list(t_list *list)
 	{
 		list->bottom->next = NULL;
 		list->bottom = NULL;
-		while(1)
+		while (1)
 		{
 			tmp = list->top;
 			list->top = list->top->next;
 			free(tmp);
 			if (!list->top)
-				break;
+				break ;
 		}
 	}
 	free(list);

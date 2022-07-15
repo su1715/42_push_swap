@@ -22,7 +22,7 @@ void	push(t_list *list, t_node *node)
 
 static t_node	*pop(t_list *list)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	tmp = NULL;
 	if (!list->size)

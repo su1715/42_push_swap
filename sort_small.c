@@ -35,7 +35,7 @@ static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
 	}
 }
 
-static void	sort_four_five_nodes(t_lists *lists, int first, int second, int third)
+static void	sort_more_nodes(t_lists *lists, int first, int second, int third)
 {
 	t_list	*a;
 	t_list	*b;
@@ -46,7 +46,7 @@ static void	sort_four_five_nodes(t_lists *lists, int first, int second, int thir
 	a_min_index = 0;
 	while (a->size > 3)
 	{
-		if(is_rotate(a, a->size / 2))
+		if (is_rotate(a, a->size / 2))
 			while (a->top->index != a_min_index)
 				ra(lists);
 		else
@@ -55,7 +55,7 @@ static void	sort_four_five_nodes(t_lists *lists, int first, int second, int thir
 		pb(lists);
 		a_min_index++;
 	}
-	sort_three_nodes(lists, first, second, third);
+	sort_more_nodes(lists, first, second, third);
 	if (b->top->index < b->top->next->index)
 		rb(lists);
 	while (b->size)

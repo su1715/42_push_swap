@@ -10,7 +10,7 @@ static void	sort_list(t_lists *lists)
 
 int	main(int ac, char *av[])
 {
-	t_lists *lists;
+	t_lists	*lists;
 
 	if (ac < 2)
 		return (0);
