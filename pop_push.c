@@ -20,7 +20,7 @@ void	push(t_list *list, t_node *node)
 	list->size += 1;
 }
 
-t_node	*pop(t_list *list)
+static t_node	*pop(t_list *list)
 {
 	t_node *tmp;
 

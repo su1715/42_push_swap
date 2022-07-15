@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	sort_list(t_lists *lists)
+static void	sort_list(t_lists *lists)
 {
 	if (lists->a->size <= 5)
 		sort_small(lists);

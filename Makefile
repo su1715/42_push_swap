@@ -11,8 +11,8 @@ SRCS = push_swap.c \
 		pop_push.c \
 		rotate.c \
 		rotate_reverse.c \
-		sort.c \
 		sort_small.c \
+		sort_large.c \
 		utils.c \
 		finish.c
 INCS = push_swap.h

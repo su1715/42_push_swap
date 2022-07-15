@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	rotate_reverse(t_list *list)
+static void	rotate_reverse(t_list *list)
 {
 	if (list->size < 2)
 		return ;

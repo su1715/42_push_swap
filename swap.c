@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	swap(t_list *list) {
+static void	swap(t_list *list) {
 	int	tmp_num;
 	int tmp_index;
 

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	sort_two_nodes(t_lists *lists)
+static void	sort_two_nodes(t_lists *lists)
 {
 	t_list	*a;
 
@@ -9,7 +9,7 @@ void	sort_two_nodes(t_lists *lists)
 		sa(lists);
 }
 
-void	sort_three_nodes(t_lists *lists, int first, int second, int third)
+static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
 {
 	if (first < second)
 	{
@@ -35,7 +35,7 @@ void	sort_three_nodes(t_lists *lists, int first, int second, int third)
 	}
 }
 
-void	sort_four_five_nodes(t_lists *lists, int first, int second, int third)
+static void	sort_four_five_nodes(t_lists *lists, int first, int second, int third)
 {
 	t_list	*a;
 	t_list	*b;

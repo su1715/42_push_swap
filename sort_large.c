@@ -18,7 +18,7 @@ int	is_rotate(t_list *list, int standard)
 		return (0);
 }
 
-void	a_to_b(t_lists *lists, int chunk)
+static void	a_to_b(t_lists *lists, int chunk)
 {
 	int	i;
 
@@ -46,7 +46,7 @@ void	a_to_b(t_lists *lists, int chunk)
 	}
 }
 
-void	raise_b_last_index(t_lists *lists)
+static void	raise_b_last_index(t_lists *lists)
 {
 	t_node	*tmp;
 	int		i;
@@ -66,7 +66,7 @@ void	raise_b_last_index(t_lists *lists)
 			rrb(lists);
 }
 
-void	b_to_a(t_lists *lists)
+static void	b_to_a(t_lists *lists)
 {
 	while (lists->b->size != 0)
 	{
