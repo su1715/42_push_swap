@@ -24,18 +24,17 @@ typedef struct s_lists {
 t_node		*make_node(int num);
 t_list		*init_list();
 t_list		*input(int ac, char *av[]);
-long long	ft_atoll(const char *str);
-int			ft_isnum(const char *s);
-void		error_exit(void);
-void		push(t_list *list, t_node *node);
-void		rotate(t_list *list);
-int			get_top(t_list *list);
 void		sort_small(t_lists *lists);
 void		sort_large(t_lists *lists);
 int			is_rotate(t_list *list, int standard);
-void		free_t_lists(t_lists *lists);
+int			get_top(t_list *list);
+int			ft_isnum(const char *s);
+long long	ft_atoll(const char *str);
 int			ft_numlen(long long n);
-
+void		error_exit(void);
+void		free_t_lists(t_lists *lists);
+void		push(t_list *list, t_node *node);
+void		rotate(t_list *list);
 void		sa(t_lists *lists);
 void		sb(t_lists *lists);
 void		ss(t_lists *lists);
