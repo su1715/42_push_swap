@@ -10,7 +10,9 @@ SRCS = push_swap.c \
 		rotate.c \
 		rotate_reverse.c \
 		swap.c \
-		utils.c
+		sort.c \
+		utils.c \
+		utils2.c
 INCS = push_swap.h
 
 OBJ_DIR = ./obj

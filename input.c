@@ -7,14 +7,7 @@ static int	check_duplicate(t_list *a, t_node *node)
 	if (a->size == 0)
 		return (0);
 	head = a->top;
-	if (head->num < node->num)
-		node->index++;
-	else if (head->num > node->num)
-		head->index++;
-	else
-		return (1);
-	head = head->next;
-	while (head != a->top)
+	while (1)
 	{
 		if (head->num < node->num)
 			node->index++;
@@ -23,6 +16,8 @@ static int	check_duplicate(t_list *a, t_node *node)
 		else
 			return (1);
 		head = head->next;
+		if (head == a->top)
+			break;
 	}
 	return (0);
 }
@@ -104,12 +99,7 @@ t_list	*input(int ac, char *av[])
 	int		i;
 
 	i = 1;
-	a = (t_list *)malloc(sizeof(t_list));
-	if (!a)
-		exit(1);
-	a->size = 0;
-	a->bottom = NULL;
-	a->top = NULL;
+	a = init_list();
 	while (i < ac)
 	{
 		if (ft_strchr(av[i], ' '))

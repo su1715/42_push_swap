@@ -12,7 +12,6 @@ void	swap(t_list *list) {
 	tmp_index = list->top->index;
 	list->top->index = list->top->next->index;
 	list->top->next->index = tmp_index;
-
 }
 
 void	sa(t_lists *lists)

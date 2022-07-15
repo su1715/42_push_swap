@@ -2,7 +2,7 @@
 
 void	error_exit(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -12,6 +12,8 @@ void	parse_test(t_list	*a)
 {
 	t_node	*head;
 
+	if (a->size == 0)
+		return;
 	head = a->top;
 	printf("(index: %d, num: %d), ", head->index, head->num);
 	head = head->next;
@@ -21,23 +23,17 @@ void	parse_test(t_list	*a)
 	}
 }
 
-void	sort_small(t_lists *lists)
+t_list	*init_list()
 {
+	t_list	*list;
 
-}
-
-void	sort_large(t_lists *lists)
-{
-	a_to_b();
-	b_to_a();
-}
-
-void	sort_list(t_lists *lists)
-{
-	if (lists->a->size < 5)
-		sort_small(lists);
-	else
-		sort_large(lists);
+	list = (t_list *)malloc(sizeof(t_list));
+	if (!list)
+		exit(1);
+	list->top = NULL;
+	list->bottom = NULL;
+	list->size = 0;
+	return (list);
 }
 
 int	main(int ac, char *av[])
@@ -50,7 +46,9 @@ int	main(int ac, char *av[])
 	if (!lists)
 		exit(1);
 	lists->a = input(ac, av);
-	parse_test(lists->a);
+	lists->b = init_list();
 	sort_list(lists);
+	parse_test(lists->a);
+	//free list, lists
 	return (0);
 }
