@@ -30,7 +30,12 @@ void	rotate(t_list *list);
 void	sort_list(t_lists *lists);
 int	get_top(t_list *list);
 t_list	*init_list();
+void	sort_small(t_lists *lists);
+int	is_r(t_list *list, int standard);
+void	free_t_lists(t_lists *lists);
 
+void	sa(t_lists *lists);
+void	sa(t_lists *lists);
 void	pa(t_lists *lists);
 void	pb(t_lists *lists);
 void	ra(t_lists *lists);

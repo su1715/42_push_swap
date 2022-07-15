@@ -1,13 +1,6 @@
 #include "push_swap.h"
 
-void	error_exit(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
 #include <stdio.h>
-
 void	parse_test(t_list	*a)
 {
 	t_node	*head;
@@ -49,7 +42,6 @@ int	main(int ac, char *av[])
 	lists->a = input(ac, av);
 	lists->b = init_list();
 	sort_list(lists);
-
-	//free list, lists
+	free_t_lists(lists);
 	return (0);
 }

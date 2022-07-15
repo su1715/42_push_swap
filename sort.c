@@ -1,31 +1,15 @@
 #include "push_swap.h"
 
-// void	sort_small(t_lists *lists)
-// {
-// 	while (a->size > 3)
-// 	{
-// 		while (a->top->index >= get_mid_result(a))
-// 			ra(a);
-// 		pb(lists);
-// 	}
-// 	if (a->size == 2 || a->size == 3)
-// 		sort_two_three(a);
-// 	while (b->size > 0)
-// 		pa(lists);
-// 	if (a->top->index > __)
-// 		sa(a);
-// }
-
 int	is_r(t_list *list, int standard)
 {
-	t_node	*head;
+	t_node	*tmp;
 	int		h_location;
 
-	head = list->top;
+	tmp = list->top;
 	h_location = 0;
-	while (head->index > standard)
+	while (tmp->index > standard)
 	{
-		head = head->next;
+		tmp = tmp->next;
 		h_location++;
 	}
 	if (h_location < list->size / 2)
@@ -62,23 +46,23 @@ void	a_to_b(t_lists *lists, int chunk)
 	}
 }
 
-void	sort_b(t_lists *lists)
+void	raise_b_last_index(t_lists *lists)
 {
-	t_node	*head;
+	t_node	*tmp;
 	int		i;
 
 	i = 0;
-	head = lists->b->top;
-	while (head->index != lists->b->size - 1)
+	tmp = lists->b->top;
+	while (tmp->index != lists->b->size - 1)
 	{
-		head = head->next;
+		tmp = tmp->next;
 		i++;
 	}
 	if (i < lists->b->size / 2)
-		while (lists->b->top != head)
+		while (lists->b->top != tmp)
 			rb(lists);
 	else
-		while (lists->b->top != head)
+		while (lists->b->top != tmp)
 			rrb(lists);
 }
 
@@ -86,7 +70,7 @@ void	b_to_a(t_lists *lists)
 {
 	while (lists->b->size != 0)
 	{
-		sort_b(lists);
+		raise_b_last_index(lists);
 		pa(lists);
 	}
 }
@@ -105,8 +89,7 @@ void	sort_large(t_lists *lists)
 void	sort_list(t_lists *lists)
 {
 	if (lists->a->size <= 5)
-		;
-		// sort_small(lists);
+		sort_small(lists);
 	else
 		sort_large(lists);
 }
