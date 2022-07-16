@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:27 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:27 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 11:54:18 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static t_node	*pop(t_list *list)
 	return (tmp);
 }
 
-void	pa(t_lists *lists)
+void	pa(t_lists *lists, int isChecker)
 {
 	t_node	*tmp;
 
@@ -62,10 +62,11 @@ void	pa(t_lists *lists)
 	if (!tmp)
 		return ;
 	push(lists->a, tmp);
-	write(1, "pa\n", 3);
+	if (!isChecker)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_lists *lists)
+void	pb(t_lists *lists, int isChecker)
 {
 	t_node	*tmp;
 
@@ -73,5 +74,6 @@ void	pb(t_lists *lists)
 	if (!tmp)
 		return ;
 	push(lists->b, tmp);
-	write(1, "pb\n", 3);
+	if (!isChecker)
+		write(1, "pb\n", 3);
 }

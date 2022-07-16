@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:51 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:51 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 11:56:40 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ static void	swap(t_list *list)
 	list->top->next->index = tmp_index;
 }
 
-void	sa(t_lists *lists)
+void	sa(t_lists *lists, int isChecker)
 {
 	swap(lists->a);
-	write(1, "sa\n", 3);
+	if (!isChecker)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_lists *lists)
+void	sb(t_lists *lists, int isChecker)
 {
 	swap(lists->b);
-	write(1, "sb\n", 3);
+	if (!isChecker)
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_lists *lists)
+void	ss(t_lists *lists, int isChecker)
 {
-	sa(lists);
-	sb(lists);
-	write(1, "ss\n", 3);
+	swap(lists->a);
+	swap(lists->b);
+	if (!isChecker)
+		write(1, "ss\n", 3);
 }

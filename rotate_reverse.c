@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:38 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:39 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 11:58:59 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,24 @@ static void	rotate_reverse(t_list *list)
 	list->top = list->top->prev;
 }
 
-void	rra(t_lists *lists)
+void	rra(t_lists *lists, int isChecker)
 {
 	rotate_reverse(lists->a);
-	write(1, "rra\n", 4);
+	if (!isChecker)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_lists *lists)
+void	rrb(t_lists *lists, int isChecker)
 {
 	rotate_reverse(lists->b);
-	write(1, "rrb\n", 4);
+	if (!isChecker)
+		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_lists *lists)
+void	rrr(t_lists *lists, int isChecker)
 {
 	rotate_reverse(lists->a);
 	rotate_reverse(lists->b);
-	write(1, "rrr\n", 4);
+	if (!isChecker)
+		write(1, "rrr\n", 4);
 }

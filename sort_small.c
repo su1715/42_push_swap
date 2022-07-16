@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:48 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 11:35:58 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:00:39 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	sort_two_nodes(t_lists *lists)
 
 	a = lists->a;
 	if (a->top->index > a->top->next->index)
-		sa(lists);
+		sa(lists, 0);
 }
 
 static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
@@ -27,22 +27,22 @@ static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
 	{
 		if (second > third && first < third)
 		{
-			rra(lists);
-			sa(lists);
+			rra(lists, 0);
+			sa(lists, 0);
 		}
 		else if (second > third && first > third)
-			rra(lists);
+			rra(lists, 0);
 	}
 	else
 	{
 		if (second < third && first < third)
-			sa(lists);
+			sa(lists, 0);
 		else if (second < third && first > third)
-			ra(lists);
+			ra(lists, 0);
 		else if (second > third && first > third)
 		{
-			ra(lists);
-			ra(lists);
+			ra(lists, 0);
+			ra(lists, 0);
 		}
 	}
 }
@@ -60,18 +60,18 @@ static void	sort_more_nodes(t_lists *lists, int first, int second, int third)
 	{
 		if (is_rotate(a, a->size / 2))
 			while (a->top->index != a_min_index)
-				ra(lists);
+				ra(lists, 0);
 		else
 			while (a->top->index != a_min_index)
-				rra(lists);
-		pb(lists);
+				rra(lists, 0);
+		pb(lists, 0);
 		a_min_index++;
 	}
 	sort_three_nodes(lists, first, second, third);
 	if (b->top->index < b->top->next->index)
-		rb(lists);
+		rb(lists, 0);
 	while (b->size)
-		pa(lists);
+		pa(lists, 0);
 }
 
 void	sort_small(t_lists *lists)

@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:44 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:45 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:01:31 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,21 @@ static void	a_to_b(t_lists *lists, int chunk)
 	{
 		if (get_top(lists->a) <= i)
 		{
-			pb(lists);
+			pb(lists, 0);
 			i++;
 		}
 		else if (get_top(lists->a) > i && get_top(lists->a) <= i + chunk)
 		{
-			pb(lists);
-			rb(lists);
+			pb(lists, 0);
+			rb(lists, 0);
 			i++;
 		}
 		else
 		{
 			if (is_rotate(lists->a, i + chunk))
-				ra(lists);
+				ra(lists, 0);
 			else
-				rra(lists);
+				rra(lists, 0);
 		}
 	}
 }
@@ -72,10 +72,10 @@ static void	raise_b_last_index(t_lists *lists)
 	}
 	if (i < lists->b->size / 2)
 		while (lists->b->top != tmp)
-			rb(lists);
+			rb(lists, 0);
 	else
 		while (lists->b->top != tmp)
-			rrb(lists);
+			rrb(lists, 0);
 }
 
 static void	b_to_a(t_lists *lists)
@@ -83,7 +83,7 @@ static void	b_to_a(t_lists *lists)
 	while (lists->b->size != 0)
 	{
 		raise_b_last_index(lists);
-		pa(lists);
+		pa(lists, 0);
 	}
 }
 

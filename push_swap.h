@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:36 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:36 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 11:53:40 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,16 @@ void		error_exit(void);
 void		free_t_lists(t_lists *lists);
 void		push(t_list *list, t_node *node);
 void		rotate(t_list *list);
-void		sa(t_lists *lists);
-void		sb(t_lists *lists);
-void		ss(t_lists *lists);
-void		pa(t_lists *lists);
-void		pb(t_lists *lists);
-void		ra(t_lists *lists);
-void		rb(t_lists *lists);
-void		rr(t_lists *lists);
-void		rra(t_lists *lists);
-void		rrb(t_lists *lists);
-void		rrc(t_lists *lists);
+void		sa(t_lists *lists, int isChecker);
+void		sb(t_lists *lists, int isChecker);
+void		ss(t_lists *lists, int isChecker);
+void		pa(t_lists *lists, int isChecker);
+void		pb(t_lists *lists, int isChecker);
+void		ra(t_lists *lists, int isChecker);
+void		rb(t_lists *lists, int isChecker);
+void		rr(t_lists *lists, int isChecker);
+void		rra(t_lists *lists, int isChecker);
+void		rrb(t_lists *lists, int isChecker);
+void		rrc(t_lists *lists, int isChecker);
 
 #endif
