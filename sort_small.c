@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:48 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 13:35:06 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:37:37 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	sort_two_nodes(t_lists *lists)
 		sa(lists, 0);
 }
 
-static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
+static void	sort_three(t_lists *lists, int first, int second, int third)
 {
 	if (first < second)
 	{
@@ -47,7 +47,19 @@ static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
 	}
 }
 
-static void	sort_more_nodes(t_lists *lists, int first, int second, int third)
+static void	sort_three_nodes(t_lists *lists)
+{
+	int	first;
+	int	second;
+	int	third;
+
+	first = lists->a->top->index;
+	second = lists->a->top->next->index;
+	third = lists->a->top->next->next->index;
+	sort_three(lists, first, second, third);
+}
+
+static void	sort_more_nodes(t_lists *lists)
 {
 	t_list	*a;
 	t_list	*b;
@@ -67,7 +79,7 @@ static void	sort_more_nodes(t_lists *lists, int first, int second, int third)
 		pb(lists, 0);
 		a_min_index++;
 	}
-	sort_three_nodes(lists, first, second, third);
+	sort_three_nodes(lists);
 	if (b->top->index < b->top->next->index)
 		rb(lists, 0);
 	while (b->size)
@@ -76,19 +88,12 @@ static void	sort_more_nodes(t_lists *lists, int first, int second, int third)
 
 void	sort_small(t_lists *lists)
 {
-	int	first;
-	int	second;
-	int	third;
-
-	first = lists->a->top->index;
-	second = lists->a->top->next->index;
-	third = lists->a->top->next->next->index;
 	if (lists->a->size < 2)
 		return ;
 	else if (lists->a->size == 2)
 		sort_two_nodes(lists);
 	else if (lists->a->size == 3)
-		sort_three_nodes(lists, first, second, third);
+		sort_three_nodes(lists);
 	else
-		sort_more_nodes(lists, first, second, third);
+		sort_more_nodes(lists);
 }
