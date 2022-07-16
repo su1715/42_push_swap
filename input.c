@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:17 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 16:31:28 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 18:36:18 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,9 @@ static void	check_input(const char *s, t_list *a)
 {
 	long long	num;
 	t_node		*new_node;
-	int			len;
 
-	len = ft_strlen(s);
-	len -= (s[0] == '-' || s[0] == '+');
 	num = ft_atoll(s);
-	if (!(ft_isnum(s) && len == ft_numlen(num)))
+	if (!(ft_isnum(s)))
 		error_exit();
 	if (num > 2147483647 || num < -2147483648)
 		error_exit();

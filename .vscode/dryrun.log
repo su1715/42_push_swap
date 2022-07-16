@@ -1,29 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/sujpark/Desktop/push_swap'
-make -C ./libft all
- 
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c push_swap.c -o obj/push_swap.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c init.c -o obj/init.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c input.c -o obj/input.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c swap.c -o obj/swap.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c pop_push.c -o obj/pop_push.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c rotate.c -o obj/rotate.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c rotate_reverse.c -o obj/rotate_reverse.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c sort_small.c -o obj/sort_small.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c sort_large.c -o obj/sort_large.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c utils.c -o obj/utils.o -g
-mkdir -p ./obj
-cc -Wall -Wextra -Werror -I ./libft -c finish.c -o obj/finish.o -g
-cc -Wall -Wextra -Werror -I ./ ./obj/push_swap.o ./obj/init.o ./obj/input.o ./obj/swap.o ./obj/pop_push.o ./obj/rotate.o ./obj/rotate_reverse.o ./obj/sort_small.o ./obj/sort_large.o ./obj/utils.o ./obj/finish.o -L ./libft -lft -o push_swap
+make: Nothing to be done for `all'.
 make: Leaving directory `/Users/sujpark/Desktop/push_swap'
  

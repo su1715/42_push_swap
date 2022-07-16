@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:54 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 15:23:09 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 19:09:00 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,31 @@ static int	is_space(char c)
 	return (0);
 }
 
-long long		ft_atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int			i;
-	int			f;
+	int			sign;
 	long long	out;
 
 	i = 0;
-	f = 1;
+	sign = 1;
 	out = 0;
 	while (is_space(str[i]))
 		++i;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			f = -1;
+			sign = -1;
 		++i;
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		out = out * 10 + (str[i] - '0');
+		if (sign * out > 2147483647 || sign * out < -2147483648)
+			break ;
 		++i;
 	}
-	return (f * out);
+	return (sign * out);
 }
 
 int	ft_isnum(const char *s)

@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:36 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 14:10:05 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 19:10:15 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-# include <limits.h>
 
 typedef struct s_node {
 	struct s_node	*prev;

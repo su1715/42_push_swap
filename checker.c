@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:17:17 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 16:43:29 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 17:44:18 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static void	execute(t_lists *lists)
 	while (cmd)
 	{
 		cmd_execute(lists, cmd);
+		free(cmd);
 		cmd = get_next_line(0);
 	}
 }
