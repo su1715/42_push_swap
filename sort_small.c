@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:48 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:48 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 11:35:58 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void	sort_more_nodes(t_lists *lists, int first, int second, int third)
 		pb(lists);
 		a_min_index++;
 	}
-	sort_more_nodes(lists, first, second, third);
+	sort_three_nodes(lists, first, second, third);
 	if (b->top->index < b->top->next->index)
 		rb(lists);
 	while (b->size)
@@ -90,5 +90,5 @@ void	sort_small(t_lists *lists)
 	else if (lists->a->size == 3)
 		sort_three_nodes(lists, first, second, third);
 	else
-		sort_four_five_nodes(lists, first, second, third);
+		sort_more_nodes(lists, first, second, third);
 }
