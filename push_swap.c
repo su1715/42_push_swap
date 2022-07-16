@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:30 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 13:41:53 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:12:25 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,6 @@ static void	sort_list(t_lists *lists)
 		sort_large(lists);
 }
 
-int	isSorted(t_list *list)
-{
-	t_node *tmp;
-
-	tmp = list->top;
-	while (1)
-	{
-		if (tmp->index > tmp->next->index)
-			return (0);
-		tmp = tmp->next;
-		if (tmp->next == list->top)
-			return (1);
-	}
-}
-
 int	main(int ac, char *av[])
 {
 	t_lists	*lists;
@@ -45,7 +30,7 @@ int	main(int ac, char *av[])
 	if (!lists)
 		exit(1);
 	lists->a = input(ac, av);
-	if (isSorted(lists->a))
+	if (is_sorted(lists->a))
 		exit(1);
 	lists->b = init_list();
 	sort_list(lists);

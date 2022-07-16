@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:36 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 13:41:31 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:10:05 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_lists {
 t_node		*make_node(int num);
 t_list		*init_list(void);
 t_list		*input(int ac, char *av[]);
-int			isSorted(t_list *list);
+int			is_sorted(t_list *list);
 void		sort_small(t_lists *lists);
 void		sort_large(t_lists *lists);
 int			is_rotate(t_list *list, int standard);

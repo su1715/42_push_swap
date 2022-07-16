@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:13 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:14 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:12:31 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,19 @@ t_list	*init_list(void)
 	list->bottom = NULL;
 	list->size = 0;
 	return (list);
+}
+
+int	is_sorted(t_list *list)
+{
+	t_node	*tmp;
+
+	tmp = list->top;
+	while (1)
+	{
+		if (tmp->index > tmp->next->index)
+			return (0);
+		tmp = tmp->next;
+		if (tmp->next == list->top)
+			return (1);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:17:17 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 13:41:12 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:11:15 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,15 @@ static void	execute(t_lists *lists)
 
 static void	check(t_lists *lists)
 {
-	if (isSorted(lists->a) && lists->b->size == 0)
+	if (is_sorted(lists->a) && lists->b->size == 0)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
 }
 
-int main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
-	t_lists *lists;
+	t_lists	*lists;
 
 	if (ac < 2)
 		return (0);
@@ -71,7 +71,8 @@ int main(int ac, char *av[])
 		exit(1);
 	lists->a = input(ac, av);
 	lists->b = init_list();
-	//이미 정렬되어있는지 검사?
+	if (is_sorted(lists->a))
+		exit(0);
 	execute(lists);
 	check(lists);
 	free_t_lists(lists);
