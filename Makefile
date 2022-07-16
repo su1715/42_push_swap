@@ -6,7 +6,7 @@
 #    By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/15 22:34:23 by sujpark           #+#    #+#              #
-#    Updated: 2022/07/16 12:58:47 by sujpark          ###   ########.fr        #
+#    Updated: 2022/07/16 16:55:18 by sujpark          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
+	$(RM) $(BONUS)
 	make -C $(LIBFT_DIR) fclean
 
 re	:

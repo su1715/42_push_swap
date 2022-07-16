@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:54 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 12:32:16 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 15:23:09 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,29 @@ static int	is_space(char c)
 	return (0);
 }
 
-long long	ft_atoll(const char *str)
+long long		ft_atoll(const char *str)
 {
-	long long	tot;
-	int			sign;
+	int			i;
+	int			f;
+	long long	out;
 
-	tot = 0;
-	sign = 1 - ((*str == '-') << 1);
-	while (is_space(*str))
-		str++;
-	str += (*str == '-' || *str == '+');
-	while (*str >= '0' && *str <= '9')
+	i = 0;
+	f = 1;
+	out = 0;
+	while (is_space(str[i]))
+		++i;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (tot > (long long) LONG_MAX / 10 + (sign < 0))
-			return ((sign < 0) - 1);
-		tot = tot * 10;
-		if (tot > (long long) LONG_MAX - (*str - '0') + (sign < 0))
-			return ((sign < 0) - 1);
-		tot += (*str - '0');
-		str++;
+		if (str[i] == '-')
+			f = -1;
+		++i;
 	}
-	return (tot * sign);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		out = out * 10 + (str[i] - '0');
+		++i;
+	}
+	return (f * out);
 }
 
 int	ft_isnum(const char *s)
