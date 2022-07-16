@@ -6,12 +6,11 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:54 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/15 22:34:54 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 12:32:16 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
 
 static int	is_space(char c)
 {

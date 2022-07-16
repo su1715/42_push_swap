@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:48 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 12:00:39 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 13:35:06 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	sort_three_nodes(t_lists *lists, int first, int second, int third)
 		else if (second > third && first > third)
 		{
 			ra(lists, 0);
-			ra(lists, 0);
+			sa(lists, 0);
 		}
 	}
 }

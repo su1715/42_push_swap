@@ -6,7 +6,7 @@
 /*   By: sujpark <sujpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 22:34:36 by sujpark           #+#    #+#             */
-/*   Updated: 2022/07/16 11:53:40 by sujpark          ###   ########.fr       */
+/*   Updated: 2022/07/16 13:41:31 by sujpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <limits.h>
 
 typedef struct s_node {
 	struct s_node	*prev;
@@ -36,6 +37,7 @@ typedef struct s_lists {
 t_node		*make_node(int num);
 t_list		*init_list(void);
 t_list		*input(int ac, char *av[]);
+int			isSorted(t_list *list);
 void		sort_small(t_lists *lists);
 void		sort_large(t_lists *lists);
 int			is_rotate(t_list *list, int standard);
@@ -57,6 +59,6 @@ void		rb(t_lists *lists, int isChecker);
 void		rr(t_lists *lists, int isChecker);
 void		rra(t_lists *lists, int isChecker);
 void		rrb(t_lists *lists, int isChecker);
-void		rrc(t_lists *lists, int isChecker);
+void		rrr(t_lists *lists, int isChecker);
 
 #endif
